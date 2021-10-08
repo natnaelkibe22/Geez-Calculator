@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-color: forestgreen;
 }
 
 .App-logo {
@@ -13,18 +14,6 @@
   }
 }
 
-
-
-.calculator-section {
-  height: 550px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  background: rgba(71,129,185,0.15);
-  border-color: #4781b9;
-  color: #4781b9;
-  cursor: default !important;
-}
 
 .App-header {
   background-color: #fff;
@@ -49,3 +38,73 @@
     transform: rotate(360deg);
   }
 }
+
+
+.calculator-section {
+  height: 550px;
+  width: 550px;
+  background: rgba(71,129,185,0.15);
+  border-color: #4781b9;
+  color: #4781b9;
+  cursor: default !important;
+}
+
+.Button {
+  background: #cad2c5;
+  display: flex;
+  border: 1px solid rgba(0,0,0,0.05);
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  width: 25%;
+  font-size: 24px;
+  color: rgba(0, 0, 0, 0.5);
+  height: 20%;
+  min-width: 25%;
+}
+
+.Button[data-size="2"] {
+  height: 40%;
+}
+
+.Button[data-value="null"] {
+  pointer-events: none;
+}
+
+.Button:hover {
+  background: #d7ddd3;
+  cursor: default;
+}
+
+
+.Display {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background: #2b293d;
+  height: 20%;
+  color: #80c9c9;
+  font-size: 24px;
+}
+
+.Keypad {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  height: 80%;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.Calculator {
+  width: 400px;
+  height: 300px;
+  position: relative;
+  margin: 25px;
+}
+
