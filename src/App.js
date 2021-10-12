@@ -48,18 +48,22 @@ class App extends Component {
     const value = e.target.getAttribute('data-value');
     switch (value) {
       case 'clear':
-        this.setState({ data: '', value: '' });
+        this.setState({ data: '', value: ''});
         break;
       case 'equal':
         this.calculate();
         break;
       default:
-        this.setState({ data: (this.state.data + value), value: (this.state.value + value) });
-        window.alert(this.state.value);
+          if (this.state.data === '') {
+            var value1 = ''
+            this.setState({data: this.state.data + value1})
+          }
+          this.setState({ data: (this.state.data + value), value: (this.state.value + value) });
     }
   }
 
   translate = (number) => {
+    number = parseInt(number)
     const sign = number < 0;
     number = Math.abs(number);
     let geeznumber = '';
@@ -152,7 +156,7 @@ class App extends Component {
   render() {
     return (
       <div className="Calculator">
-        <Display data={this.translator(this.state.data)} value={this.state.value} />
+        <Display data={this.translate(this.state.data)} value={this.state.value} />
         <Keypad>
           <Button onClick={this.handleClick} label="C" value="clear" />
           <Button onClick={this.handleClick} label={this.translator(7)} value="7" />
